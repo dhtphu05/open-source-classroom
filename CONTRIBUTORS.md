@@ -19,7 +19,7 @@ Mẫu bảng contributors (Markdown)
 ---------------------------------
 | Tên | MSSV | GitHub | Vai trò | Ghi chú |
 |-----|------|--------|---------|--------|
-| Nguyễn Văn A | 20123456 | @nguyenvana | Student (author) | Bài lab 01 — Exercise-01 |
+| Đoàn Hoàng Thiên Phú| 102230313 | @dhtphu05 | Student (author) | Bài lab 01 — Exercise-01 |
 | Nguyễn Văn Hoài | 102230241 | @nv-hoai | Contributor | None |
 | Phan Thanh Trường | 102230381 | TruongDayNe |  Contributor | None |
 
