@@ -1,46 +1,103 @@
-# Open Source Classroom
+# Open Source Classroom — LAB GUIDE
 
-Open Source Classroom là một kho tài liệu và mẫu dự án dành cho giảng viên, trợ giảng và sinh viên muốn học và thực hành đóng góp mã nguồn mở (open-source). Mục tiêu của repo là cung cấp hướng dẫn rõ ràng, bài tập thực hành, mẫu quy trình đóng góp và tài nguyên học tập để đưa người mới tiếp cận được quy trình phát triển phần mềm thực tế.
+Phiên bản: 1.0
+Ngày phát hành: 2026-09-07
 
-## Mục tiêu
-- Dạy các khái niệm cơ bản về Git và GitHub.
-- Hướng dẫn quy trình đóng góp: fork → branch → PR → review → merge.
-- Cung cấp bài tập, mẫu dự án và đề bài phù hợp cho lớp học.
-- Khuyến khích sinh viên tham gia đóng góp mã nguồn mở thực tế.
+Mục đích
+----------
+Open Source Classroom là kho tài liệu phục vụ cho bài lab của môn học về quy trình phát triển phần mềm và đóng góp mã nguồn mở. Tài liệu này được viết với mục tiêu hướng dẫn rõ ràng, chính xác và có thể áp dụng trong môi trường lớp học (điều kiện kiểm tra và chấm điểm).
 
-## Nội dung chính
-- README.md — Mô tả dự án và hướng dẫn nhanh.
-- contributors.md — Hướng dẫn và danh sách đóng góp viên.
-- resources.md — Tài nguyên học tập (tài liệu, video, bài viết).
-- /exercises — Bài tập thực hành (mô tả bài và test/data nếu có).
-- /templates — Mẫu issue, PR, và bài tập.
+Mục tiêu học tập (Learning Outcomes)
+------------------------------------
+Sau khi hoàn thành bài lab, sinh viên sẽ có thể:
+1. Sử dụng Git và GitHub cho quy trình làm việc nhóm: fork, branch, commit, push, pull request (PR), review, merge.
+2. Viết mô tả PR và issue rõ ràng, kèm testcase hoặc hướng dẫn tái tạo lỗi.
+3. Thực hành làm việc theo chuẩn commit (ví dụ Conventional Commits) và đặt tên branch chuẩn.
+4. Thực hiện review code bản chất xây dựng, phản hồi có tính xây dựng và theo dõi feedback.
+5. Chuẩn bị sản phẩm (code, tài liệu, hướng dẫn) đáp ứng yêu cầu kiểm thử đơn vị hoặc mô phỏng.
 
-## Bắt đầu nhanh
-1. Fork repo này về tài khoản của bạn.
-2. Clone về máy:
+Yêu cầu trước khi làm bài
+-------------------------
+- Có tài khoản GitHub cá nhân.
+- Cài Git trên máy tính và cấu hình username/email: `git config --global user.name "Tên bạn"` và `git config --global user.email "email@domain"`.
+- Kiến thức cơ bản về command line.
 
+Thiết lập môi trường
+---------------------
+1. Fork repository gốc: https://github.com/dhtphu05/open-source-classroom
+2. Clone fork về máy:
    git clone https://github.com/<your-username>/open-source-classroom.git
-3. Tạo branch mới cho thay đổi của bạn:
+   cd open-source-classroom
+3. Tạo branch cho bài làm (theo chuẩn):
+   git checkout -b lab/<mssv>-<ho-ten-slug>
+   Ví dụ: `git checkout -b lab/20123456-nguyen-van-a`
 
-   git checkout -b feat/ten-cua-ban
-4. Thực hiện thay đổi, commit và push:
+Cấu trúc bài lab
+-----------------
+Trong repository, bài lab được tổ chức như sau:
+- exercises/ : thư mục chứa đề bài theo từng bài (exercise-01, exercise-02, ...). Mỗi exercise có file README.md mô tả nhiệm vụ và tiêu chí chấm.
+- templates/ : mẫu Issue, PR, và mẫu báo cáo kết quả.
+- resources/ : tài liệu hỗ trợ (link, slides, script cài đặt).
+- tests/ (nếu có) : bộ kiểm thử tự động dùng để đánh giá.
 
-   git add .
-   git commit -m "Mô tả ngắn thay đổi"
-   git push origin feat/ten-cua-ban
-5. Mở Pull Request (PR) từ branch của bạn vào nhánh chính của repo gốc.
+Nội dung bài tập (ví dụ mẫu)
+-----------------------------
+Exercise 1 — Git fundamentals (nhóm 1-2 người)
+- Yêu cầu: Thực hiện một thay đổi tài liệu/website tĩnh theo yêu cầu trong `exercises/exercise-01/README.md`.
+- Kết quả cần nộp: Một Pull Request từ branch `lab/<mssv>-<ten>` trong fork của bạn vào nhánh `main` của repository gốc.
+- Tiêu chí chấm: PR đúng format, commit rõ ràng, mô tả PR (mục tiêu, cách kiểm thử), passing tests (nếu có).
 
-## Cách đóng góp
-Trước khi đóng góp, đọc `contributors.md` để biết quy tắc đóng góp, tiêu chuẩn commit và cách thêm tên bạn vào danh sách đóng góp.
+Deliverables — những mục phải nộp
+--------------------------------
+- Pull Request hợp lệ, kèm mô tả chi tiết.
+- Nếu yêu cầu: file báo cáo ngắn (report.md) trong thư mục bài làm mô tả cách thực hiện và các quyết định kỹ thuật.
+- Nếu có test tự động: PR phải vượt qua test CI (nếu CI được cấu hình).
 
-Nếu bạn là giảng viên và muốn dùng repo này cho lớp học, hãy mở một Issue với mô tả khóa học hoặc yêu cầu tính năng — chúng tôi sẽ hỗ trợ tạo template bài tập.
+Quy trình nộp bài (bắt buộc)
+---------------------------
+1. Fork -> tạo branch `lab/<mssv>-<ten>`.
+2. Thực hiện thay đổi trên branch đó.
+3. Đảm bảo commit có thông điệp rõ ràng theo chuẩn:
+   - `feat(exercise-01): implement X`
+   - `fix(exercise-01): correct Y`
+4. Push branch lên fork và mở Pull Request vào `dhtphu05/open-source-classroom:main`.
+5. Trong mô tả PR, nêu rõ:
+   - Tên, mã số sinh viên (MSSV), lớp
+   - Mục tiêu bài làm
+   - Các bước để kiểm thử
+   - Nếu cần: ảnh chụp màn hình hoặc log
+6. Gắn nhãn PR theo hướng dẫn của khóa học (vd: `lab`, `exercise-01`, `ready-for-review`).
 
-## Quy tắc hành xử
-Mọi người tham gia phải tuân thủ Quy tắc ứng xử (Code of Conduct). Hãy lịch sự và tôn trọng khi review và trao đổi.
+Quy tắc chấm điểm (Rubric)
+---------------------------
+- Tính hoàn thiện của yêu cầu (0-50%) — 50 điểm
+- Chất lượng code/tài liệu (0-20%) — 20 điểm
+- Tuân thủ quy trình Git/GitHub và định dạng PR (0-15%) — 15 điểm
+- Kiểm thử / passing CI (0-10%) — 10 điểm
+- Thái độ hợp tác (code review, phản hồi) (0-5%) — 5 điểm
 
-## Giấy phép
-Mọi nội dung trong repo này được cấp phép theo MIT License — xem file LICENSE để biết chi tiết.
+Academic Integrity (Trung thực học thuật)
+-----------------------------------------
+- Mọi hành vi sao chép không ghi nguồn sẽ bị xử lý theo quy định của khóa học.
+- Hợp tác được cho phép trong phạm vi được nêu trong đề bài; nếu hợp tác, PR phải nêu rõ tên thành viên và phần việc.
+
+Hỗ trợ và liên hệ
+------------------
+- Mọi thắc mắc về đề bài hoặc lỗi kỹ thuật, mở Issue trong repository và gắn nhãn `question`.
+- Liên hệ Giảng viên/Trợ giảng trong mô tả Issue: tên và email.
+
+Checklist để đánh dấu hoàn thành trước khi mở PR
+-------------------------------------------------
+- [ ] Đã đọc kỹ đề bài trong `exercises/*/README.md`.
+- [ ] Branch theo chuẩn `lab/<mssv>-<ten>`.
+- [ ] Commit message rõ ràng và có ý nghĩa.
+- [ ] Có mô tả PR đầy đủ: mục tiêu, bước kiểm thử, dữ liệu đầu vào (nếu cần).
+- [ ] Đã chạy test cục bộ (nếu có) và document cách chạy test.
+
+Tham khảo
+---------
+Xem `RESOURCES.md` để biết tài liệu và hướng dẫn chi tiết.
 
 ---
 
-Nếu bạn muốn mình điều chỉnh nội dung README để phù hợp với chương trình giảng dạy cụ thể (ví dụ: môn Git cơ bản, PBL, hoặc workshop 2 giờ), hãy cho biết tên khóa học và mục tiêu học tập.
+Nếu nội dung này ổn cho bài lab của bạn, tôi sẽ commit các file bổ sung (`CONTRIBUTORS.md`, `RESOURCES.md`) vào repository và gửi thông báo nơi các sinh viên có thể bắt đầu làm bài.
