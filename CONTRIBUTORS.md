@@ -37,3 +37,7 @@ PR review và bổ sung
 Ghi chú cho giảng viên
 ----------------------
 - Maintainers có quyền chỉnh sửa danh sách để hợp thức hóa tên theo yêu cầu kiểm tra điểm.
+
+## Contributor 1
+
+- Phan Thanh Trường | 102230381 | TruongDayNe |  Contributor | No note
